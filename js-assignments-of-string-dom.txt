@@ -1,0 +1,34 @@
+Section 6 - Strings and Date
+- Declaring Strings in
+- String Comparison
+- String Functions
+- Date and Formats, Date operations
+*1. Write a program to find length of a string.
+*2. Write a program to take two strings as input from the user. Confirm that the strings are
+equal.
+*3. Write a program to find total number of alphabets, digits or special character in a string.
+*4. Write a program to convert lowercase string to uppercase.
+*5. Write a program to find reverse of a string.
+
+#1. Write a program to convert string into lowercase without any library function.
+#2. Write a program to accept a string and check if it is palindrome or not?
+#3. Write a program to count total number of vowels and consonants in a string.
+#4. Write a program to find first occurrence of a character in a given string.
+#5. Write a program to toggle case of each character of a string.
+--------------------------------------------------------------------
+Section 7 - Functions, Event and DOM
+- Events : click, doubleclick, keyup, keydown, mouseover, mouseenter, mouseleave, load,
+blur, focus.
+- Javascript validation - required, length, email, number, password, regular expression
+- DOM Manipulation : createElement() , appendChild(), append() ,remove(), parentElement,
+getElementById(), getElementsByName(), getElementsByTagName(),
+getElementsByClassName()
+- Form Tag and Submit event
+- Event bubbling
+- setInterval() , setTimeOut(), clearInterval() , clearTimeOut()
+
+#Create Photo Gallery with add and delete images. All Images show in tables and in every
+table row only have 5 columns.
+#Create a slider with 10 images in javascript with next and previous button.
+#Create a Calculator with HTML and Javascript without using eval function.
+# Create a StopWatch in HTML and Javascript.
