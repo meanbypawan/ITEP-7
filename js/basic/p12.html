@@ -1,0 +1,13 @@
+<script>
+    function f1(a,b){
+      document.write("<br>a : "+a);
+      document.write("<br>b : "+b);
+    }
+    function f2(callback){
+       document.write("<br>f2-executed...");
+       callback(20,10)
+    }
+
+    f2(f1);
+    
+</script>

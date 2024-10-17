@@ -1,0 +1,19 @@
+<script>
+    function f1(){
+        document.write("<br>f1-executed...");
+    }
+
+    const f2 = function(){
+        document.write("<br>f2-executed...");
+    }
+    const f3 = ()=>{
+        document.write("<br>f3-executed.....");
+    }
+
+    f1();
+    f2();
+    f3();
+    (function(){
+        document.write("IIFE executed....");
+    }())
+</script>

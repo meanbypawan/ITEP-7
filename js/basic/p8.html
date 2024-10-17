@@ -1,0 +1,18 @@
+<script>
+    function f1(a,b,c){
+        document.write("<br>a : "+a);
+        document.write("<br>b : "+b);
+        document.write("<br>c : "+c);
+        document.write("<br>f1-executed...<br>");
+        return 2000;
+    }
+    function f1(a,b,c){
+        document.write("<br>a : "+a);
+        document.write("<br>b : "+b);
+        document.write("<br>c : "+c);
+        document.write("<br>f1-executed...<br>");
+        return 3000;
+    }
+    let result = f1(1,2,3,4);
+    document.write(result);
+</script>

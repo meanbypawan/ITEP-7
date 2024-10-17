@@ -1,0 +1,19 @@
+<script>
+    var arr = [1,2,3,4,5,6,7,8,9];
+    //var result = arr.filter((element)=>{return element%2==0});
+    //result.map((element,index)=>document.write("<br>"+element));
+   arr.filter((element)=>{return element%2==0}).map((element,index)=>{
+    document.write("<br>"+element);
+   })
+   document.write("<hr/>");
+   var arr = [10,20,25,15,35,65,70];
+   var element = arr.find((element)=>{return element == 155});
+   if(element)
+     document.write("Element Found");
+   else
+     document.write("Element Not Found");  
+   document.write("<hr/>");
+   
+   var status = arr.some((element)=>{return element==155});
+   document.write(status);
+</script>

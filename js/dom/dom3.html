@@ -1,0 +1,24 @@
+
+<html>
+    <body>
+        <center>
+            <img id="main" src="./images/banner.png" width="200px" height="200px"/>
+            <br><br>
+            <button id="plus" onclick="changeImage(1)">+</button>
+            <button id="minus" onclick="changeImage(0)">-</button>
+        </center>
+        <script>
+            function changeImage(n){
+               let obj = document.getElementById("main");
+               if(n){
+                 obj.width = obj.width + 50;
+                 obj.height = obj.height + 50;
+               }
+               else{
+                 obj.width = obj.width - 50;
+                 obj.height = obj.height - 50;
+               }
+            }
+        </script>    
+    </body>
+</html>

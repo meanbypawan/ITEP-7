@@ -1,0 +1,14 @@
+<script>
+    function f1(a,b,c){
+      // a = 20
+      // b = "hello"
+      // c = function(){}
+      document.write("<br> a : "+a);
+      document.write("<br>b : "+b);
+      c();
+    }
+
+    f1(20,"hello",()=>{
+        document.write("<br>Callback executed.....");
+    })
+</script>
