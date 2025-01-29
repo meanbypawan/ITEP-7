@@ -1,0 +1,19 @@
+<script>
+    /*
+      Closure :- 
+      It allows us to access outer function variable 
+      in inner function scope.
+    */
+    function f1(a,b){
+        let c = 100;
+        return function f2(){
+          console.log(a);
+          console.log(b);
+          console.log(c);
+        }
+    }
+
+    const inner = f1(20,10);
+    //console.log(inner);
+    inner();
+</script>
