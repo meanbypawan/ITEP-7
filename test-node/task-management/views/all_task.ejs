@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <%- include("__bootstrap.ejs")%>
+    </head>
+    <body>
+        <%-include("__header.ejs")%>
+        <script>
+            let priorityValue = "All";
+            let taskList = '<%=taskList%>';
+            taskList = JSON.parse(JSON.stringify(taskList));
+            function changePriorityValue(p){
+                priorityValue = p;
+            }
+        </script>    
+        <div class="container mt-3">
+            <a href="/task/load-task/1" class="btn btn-outline-danger" style="width:100px">High</a>
+            <a href="/task/load-task/2" class="btn btn-outline-warning" style="width:100px">Medium</a>
+            <a href="/task/load-task/3" class="btn btn-outline-success" style="width:100px">Low</a>
+            <a href="/task/all-task"class="btn btn-outline-secondary" style="width:100px">All</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <script></script>
+                <%taskList.map((task,index)=>{%>
+                  <div class="col-md-4 p-2" >
+                    <div class="text-white p-3 d-flex flex-column justify-content-between align-items-center <%=task.priority=='High' ? 'bg-danger' : task.priority=='Medium' ? 'bg-warning' : 'bg-success'%> " style="box-shadow: 10px 10px 10px grey; min-height: 300px; font-weight: bold;">
+                      <p class="text-center" style="font-weight: bolder;"><%=task.title%></p>
+                      <label class="text-center"><%=task.description%></label>
+                      <label>Create At : <%=task.date%></label>
+                      <div class="bg-light p-2 d-flex flex-row justify-content-around" style="width: 100%;">
+                        <button class="btn btn-primary" style="width:40%;">Edit</button>
+                        <button class="btn btn-danger" style="width:40%;">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                <%})%>
+            </div>
+        </div>
+    </body>
+</html>
