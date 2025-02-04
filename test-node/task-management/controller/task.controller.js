@@ -42,3 +42,7 @@ export const createTaskPage = async (request,response,next)=>{
     return response.render("error.ejs");
    }
 }
+
+export const dashBoardPage = (request,response,next)=>{
+  return response.render("dashboard.ejs");
+}

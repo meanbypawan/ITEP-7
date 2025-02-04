@@ -1,8 +1,9 @@
 import express from "express";
-import { signIn, singInPage } from "../controller/admin.controller.js";
+import { signIn, singInPage, signout } from "../controller/admin.controller.js";
 
 const router = express.Router();
 
 router.get("/sign-in",singInPage);
 router.post("/sign-in",signIn);
+router.post("/signout",signout);
 export default router;
