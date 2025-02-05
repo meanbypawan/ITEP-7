@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
+
 import sequelize from "../db/dbConfig.js";
+
 const Admin = sequelize.define("admin",{
    id:{
     type:DataTypes.INTEGER,
@@ -15,7 +17,6 @@ const Admin = sequelize.define("admin",{
     allowNull: false
    }
 });
-
 sequelize.sync()
 .then(()=>{
     console.log("Admin model created...");
@@ -23,6 +24,7 @@ sequelize.sync()
     console.log("Something wrong...");
     console.log(err);
 });
+
 export default Admin;
 
 /*
