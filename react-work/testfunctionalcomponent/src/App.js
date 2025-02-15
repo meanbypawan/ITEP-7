@@ -1,3 +1,10 @@
+/*
+  useState()
+  useReducer()
+  props
+  ----------
+  StudentApp
+*/
 function App(){
   return <>
     <h1>Hello Functional component..</h1>
