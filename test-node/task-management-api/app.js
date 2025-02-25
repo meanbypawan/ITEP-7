@@ -4,7 +4,9 @@ import TaskPriorityRouter from "./routes/task_priority.route.js";
 import TaskRouter from "./routes/task.route.js";
 import bodyParser from "body-parser";
 import association from "./model/association.js";
+import cors from "cors";
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

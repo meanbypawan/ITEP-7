@@ -3,7 +3,9 @@ import Admin from "../model/admin.model.js";
 import bcrypt from "bcryptjs";
 export const signIn = async(request,response,next)=>{
     try{
+       console.log("Sign in request caught....");
        let {email,password} = request.body;
+       console.log(email);
        let user = await Admin.findOne({raw: true,where:{email}});
        if(user){
           let hashPassword = user.password;
