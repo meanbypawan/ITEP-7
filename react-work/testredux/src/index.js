@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import "react-toastify/dist/ReactToastify.css";
+import { Provider } from 'react-redux';
+import MyStore from "./redux-config/MyStore";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <BrowserRouter> 
-  <App />
- </BrowserRouter> 
+   <Provider store={MyStore}>
+    <App />
+   </Provider> 
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -13,9 +13,6 @@ function RouteConfig(){
        <Route path="/" element={<SignIn/>}/>
        <Route path="dashboard" element={<ProtectedRoute><DashBoard/></ProtectedRoute>}/>
        <Route path="create-new-task" element={<ProtectedRoute><CreateNewTask/></ProtectedRoute>}/>
-       <Route path="view-all-task" element={<ProtectedRoute><AllTask/></ProtectedRoute>}/>
-       <Route path="completed-task" element={<ProtectedRoute><CompletedTask/></ProtectedRoute>}/>
-       <Route path="pending-task" element={<ProtectedRoute><PendingTask/></ProtectedRoute>}/>
        <Route path="sign-in" element={<SignIn/>}/>
      </Routes>
     </>

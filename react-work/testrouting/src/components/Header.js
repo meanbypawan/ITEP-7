@@ -14,9 +14,6 @@ function Header() {
             <ul className="navbar-nav">
                 <li className="nav-item active"><Link className="nav-link" to="/dashboard">Home</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/create-new-task">Create New Task</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/view-all-task">View All Task</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/completed-task">Completed Task</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/pending-task">Pending Task</Link></li>
                 {!isLoggedIn() && <li className="nav-item"><Link className="nav-link" to="/sign-in">Sign in</Link></li>}
                 {!isLoggedIn() && <li className="nav-item"><Link className="nav-link" to="">Sign up</Link></li>}
                 {isLoggedIn() && <li className="nav-item"><button onClick={handleSignOut} className="btn btn-outline-danger">Sign out</button></li>}
