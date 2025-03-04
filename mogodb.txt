@@ -1,0 +1,171 @@
+Creating Database
+  use databaseName
+-----------------------
+Creating Collection
+  db.createCollection("collectionName")
+
+  db.collectionName.isCapped()
+      
+  db.employee.find()
+  [
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a583"),
+    name: 'A',
+    skill: 'Java',
+    salary: 90000,
+    gender: 'male'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a584"),
+    name: 'D',
+    skill: 'Reactjs',
+    salary: 120000,
+    gender: 'female'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a585"),
+    name: 'C',
+    skill: 'Angular',
+    salary: 75000,
+    gender: 'male'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a586"),
+    name: 'B',
+    skill: 'Android',
+    salary: 150000,
+    gender: 'male'
+   },
+  {
+    _id: ObjectId("67c57432bce5cb47ca69a587"),
+    name: 'E',
+    skill: 'Javascript',
+    salary: 95000,
+    gender: 'male'
+  },
+  {
+    _id: ObjectId("67c57432bce5cb47ca69a588"),
+    name: 'F',
+    skill: 'CSS',
+    salary: 93000,
+    gender: 'female'
+  }
+]
+-----------------------------------------
+  // select * from employee
+  db.employee.find();
+
+  // select * from employee where skill = 'Java'
+  db.employee.find({gender: 'male'});
+
+  // select * from employee where salary >=70000
+  $gt, $lt, $gte, $lte, $eq, $ne,
+  $and, $or
+ 
+  db.employee.find({salary: {$gte: 90000}})
+  
+  // select * from employee where salary >=90000 and salary <= 120000
+  // select * from employee where salary between 90000 and 120000
+  
+  db.employee.find({
+    $and:[{salary:{$gte:90000}},{salary:{$lte:120000}}]
+  })
+
+  db.employee.find({
+    $or:[{skill: 'Java'},{skill: "ReactJs"}]
+  })
+ ----------------------------------------------------------------------------
+ db.employee.find({salary: 90000})
+ db.employee.find({salary: {$eq:90000}})
+ db.employee.find({salary: {$ne:90000}})
+-------------------------------------------------------------------------------
+  // select id,name,skill from employee
+ db.employee.find({},{name:1,salary:1,skill:1,_id:0});
+ db.employee.find({},{_id:0,gender:0})  
+
+
+ db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).limit(1)
+
+ db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary -->150000
+
+ db.employee.find({
+   salary: db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary
+ });
+
+
+ db.employee.find({
+   salary:{$lt:db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary}
+ }).sort({salary:-1}).toArray()[0].salary
+ 
+ 
+ db.employee.find({
+   salary: db.employee.find({
+     salary:{$lt:db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary}
+   }).sort({salary:-1}).toArray()[0].salary
+ })
+
+ db.employee.find({
+   salary: {$lt: db.employee.find({
+     salary:{$lt:db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary}
+     }).sort({salary:-1}).toArray()[0].salary
+   }
+ }).sort({salary:-1}).toArray()[0].salary
+
+
+ db.employee.find({
+  salary:  db.employee.find({
+   salary: {$lt: db.employee.find({
+     salary:{$lt:db.employee.find({},{_id:0,gender:0}).sort({salary: -1}).toArray()[0].salary}
+     }).sort({salary:-1}).toArray()[0].salary
+   }
+ }).sort({salary:-1}).toArray()[0].salary
+
+ })
+-------------------------------------------------------------
+  db.employee.find().sort({salary:-1}).limit(3)
+------------------------------------------------------------- 
+db.employee.find({position:{$regex:"[^a]",$options:"i"}})
+
+db.collection.find( { skill: { $regex: /^Java/i } } )
+
+db.employee.update(
+ {salary:{$gte:90000}},
+ {$set: {skill: "Java"}},
+ {multi: true}
+);
+---------------------------
+db.employee.updateMany(
+  {skill: "Java"},
+  {$unset: {location: 1}}
+)
+
+db.products.updateOne({
+  _id: ObjectId("67c6cc10bce5cb47ca69a58b")
+},{$pull:{reviews:{reviewerName:"Scarlett Wright"}}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
