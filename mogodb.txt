@@ -144,6 +144,129 @@ db.products.updateOne({
 },{$pull:{reviews:{reviewerName:"Scarlett Wright"}}})
 
 
+------------------------------------------------------
+aggregate pipeline
+
+db.categories.aggregate([
+  {$match:{slug:"groceries"}}
+])
+----------------------------------------
+categories
+{slug,name,url}
+products
+{id,title,price,category}
+---------------------------------------
+db.categories.insertMany([
+  {id:1,categoryName : "c1"},
+  {id:2, categoryName: "c2"},
+  {id:3, categoryName:"c3"},
+  {id:4, categoryName: "c4"},
+  {id:5,categoryName: "c5"}
+])
+
+db.products.insertMany([
+  {id:100,productName:"p1",categoryId: 1},
+  {id:101,productName:"p2",categoryId: 1},
+  {id:102,productName:"p3",categoryId: 1},
+  {id:103,productName:"p4",categoryId: 2},
+  {id:104,productName:"p5",categoryId: 2},
+  {id:105,productName:"p6",categoryId: 3},
+  {id:106,productName:"p7",categoryId: 3},
+  {id:107,productName:"p8",categoryId: 3},
+  {id:108,productName:"p9",categoryId: 4},
+  {id:109,productName:"p10",categoryId: 5}
+])
+db.products.aggregate([
+  {
+     $lookup:{
+       from: "categories",
+       foreignField: "id",
+       localField: "categoryId",
+       as: "categoryInfo"
+     }
+  },{
+    $match:{
+       id: 100
+    }
+  },{
+    $project:{productName:1, categoryInfo:{categoryName:1}}
+  }
+]);
+
+db.employee.insertMany(  [
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a583"),
+    name: 'W',
+    skill: 'Java',
+    salary: 95000,
+    gender: 'male'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a584"),
+    name: 'X',
+    skill: 'Reactjs',
+    salary: 130000,
+    gender: 'female'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a585"),
+    name: 'Y',
+    skill: 'Angular',
+    salary: 75000,
+    gender: 'male'
+   },
+   {
+    _id: ObjectId("67c57432bce5cb47ca69a586"),
+    name: 'Z',
+    skill: 'Android',
+    salary: 140000,
+    gender: 'male'
+   }])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
