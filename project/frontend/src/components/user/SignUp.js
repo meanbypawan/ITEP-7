@@ -53,7 +53,7 @@ function SignUp(){
               <button type="submit" className="btn btn-secondary" style={{width:"100%"}}>Submit</button>
             </div>
             <div className="form-group text-center d-flex flex-column">
-              <Link to="/">
+              <Link to="/sign-in">
                 <label className="text-primary" style={{cursor:"pointer"}}>Already hava account ?</label>
               </Link>
             </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import {useDispatch} from "react-redux";
 import apis from "../../apis";
@@ -12,12 +12,14 @@ function SignIn(){
     const [password,setPassword] = useState("");
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleSubmit = async(event)=>{
        try{ 
         event.preventDefault();
         let response = await axios.post(apis.SIGN_IN,{email,password});
         toast.success("Sign in success");
         dispatch(setUser(response.data));
+        navigate("/");
        }
        catch(err){
         toast.error(err.response.data.error);
