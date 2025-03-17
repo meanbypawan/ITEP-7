@@ -14,8 +14,13 @@ const slice = createSlice({
             delete state.user.password
             state.token = action.payload.token
             state.isLoggedIn = true
+        },
+        unsetUser:(state,action)=>{
+            state.user = null;
+            state.token = null;
+            state.isLoggedIn = false;
         }
     }
 });
-export const {setUser} = slice.actions;
+export const {setUser, unsetUser} = slice.actions;
 export default slice.reducer;
