@@ -19,7 +19,7 @@ function SignUp(){
         let contact = contactInput.current.value;
         let address = addressInput.current.value;
         let response = await axios.post(apis.SIGN_UP,{name,email,password,contact,address});
-        navigate("/"); 
+        navigate("/verify-account",{state:{params:{userId: response.data.user._id,otp: response.data.user.OTP}}}); 
        }
        catch(err){
           toast.error("Oops! something went wrong | Try after sometime");

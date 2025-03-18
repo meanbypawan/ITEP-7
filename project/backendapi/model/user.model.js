@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
     },
     address:{
         type: String
-    }
+    },
+    OTP:String
 });
 
 export const User = mongoose.model("user",userSchema);

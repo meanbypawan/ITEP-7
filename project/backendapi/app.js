@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import UserRouter from "./route/user.route.js";
 import ProductRouter from "./route/product.route.js";
+import OrderRouter from "./route/order.route.js";
 import "dotenv/config";
 
 const app = express();
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGODB_URL)
    console.log("Atlas connected....");
    app.use("/user",UserRouter);
    app.use("/product",ProductRouter);
+   app.use("/order",OrderRouter);
    app.listen(process.env.PORT,()=>{
     console.log("Server Started At http://localhost:3000");
    });

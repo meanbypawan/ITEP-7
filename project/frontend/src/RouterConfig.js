@@ -7,6 +7,7 @@ import Category from "./components/category/Category";
 import ViewMore from "./components/view-more/ViewMore";
 import BuyNow from "./components/buy-now/BuyNow";
 import ProtectedRoute from "./ProtectedRoute";
+import VerifyAccount from "./components/verify-account/VerifyAccount";
 
 function RouteConfig(){
     return <>
@@ -19,6 +20,7 @@ function RouteConfig(){
         </Route>
         <Route path="sign-up" element={<SignUp/>}/>
         <Route path="sign-in" element={<SignIn/>}/>
+        <Route path="verify-account" element={<VerifyAccount/>}/>
      </Routes>
     </>
 }

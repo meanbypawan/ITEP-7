@@ -15,7 +15,7 @@ function ViewMore(){
      setProduct(response.data.product);
     }
     const handleBuyNow = ()=>{
-      navigate("/buy-now",{state:{params:{pid: productId}}});
+      navigate("/buy-now",{state:{params:{product: product}}});
     }
     return <>
       <div className="container mt-5">
