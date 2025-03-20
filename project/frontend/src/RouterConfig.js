@@ -8,6 +8,7 @@ import ViewMore from "./components/view-more/ViewMore";
 import BuyNow from "./components/buy-now/BuyNow";
 import ProtectedRoute from "./ProtectedRoute";
 import VerifyAccount from "./components/verify-account/VerifyAccount";
+import OrderHistory from "./components/order/OrderHistory";
 
 function RouteConfig(){
     return <>
@@ -17,10 +18,12 @@ function RouteConfig(){
           <Route path="category" element={<Category/>}/>
           <Route path="view-more/:productId" element={<ViewMore/>}/>
           <Route path="buy-now" element={<ProtectedRoute><BuyNow/></ProtectedRoute>}/>
+          <Route path="order-history" element={<ProtectedRoute><OrderHistory/></ProtectedRoute>}/>
         </Route>
         <Route path="sign-up" element={<SignUp/>}/>
         <Route path="sign-in" element={<SignIn/>}/>
         <Route path="verify-account" element={<VerifyAccount/>}/>
+
      </Routes>
     </>
 }

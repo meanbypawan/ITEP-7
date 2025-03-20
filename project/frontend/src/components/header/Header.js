@@ -32,6 +32,9 @@ function Header() {
           {(!isLoggedIn)&&<li className="nav-item">
             <Link className="nav-link" to="/sign-up">Sign up</Link>
           </li>}
+          {(isLoggedIn)&&<li className="nav-item">
+            <Link className="nav-link" to="/order-history">Order history</Link>
+          </li>}
          </ul>
          <input type="text" className="ml-3" style={{width:"50%",height:"40px",borderRadius:"10px",paddingLeft:"10px"}} placeholder="Search product by title or brand"/>
          {isLoggedIn &&<button className="btn btn-sm btn-outline-danger ml-3" onClick={handleSignOut}>Sign out</button>}
